@@ -37,6 +37,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)jsq_pinAllEdgesOfSubview:(UIView *)subview;
 
+/**
+ *  Pins all edges of the specified subview to the receiver's safe area.
+ *
+ *  @param subview The subview to which the receiver's safe area will be pinned.
+ */
+- (void)jsq_pinAllEdgesSafeAreasOfSubview:(UIView *)subview;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

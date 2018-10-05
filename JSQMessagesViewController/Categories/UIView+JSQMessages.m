@@ -39,4 +39,16 @@
     [self jsq_pinSubview:subview toEdge:NSLayoutAttributeTrailing];
 }
 
+- (void)jsq_pinAllEdgesSafeAreasOfSubview:(UIView *)subview
+{
+    if (@available(iOS 11.0, *)) {
+        [[self.safeAreaLayoutGuide.topAnchor constraintEqualToAnchor:subview.topAnchor] setActive:YES];
+        [[self.safeAreaLayoutGuide.leadingAnchor constraintEqualToAnchor:subview.leadingAnchor] setActive:YES];
+        [[self.safeAreaLayoutGuide.bottomAnchor constraintEqualToAnchor:subview.bottomAnchor] setActive:YES];
+        [[self.safeAreaLayoutGuide.trailingAnchor constraintEqualToAnchor:subview.trailingAnchor] setActive:YES];
+    } else {
+        [self jsq_pinAllEdgesOfSubview:subview];
+    }
+}
+
 @end
